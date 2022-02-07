@@ -1,17 +1,16 @@
 package be.rgen
 
-import be.rgen.dto.album.AlbumDTO
 import be.rgen.dto.track.TrackDTO
-import be.rgen.entity.Album
 import be.rgen.entity.Track
 import javax.ws.rs.*
+import kotlin.streams.toList
 
 @Path("/track")
 class TrackResource {
 
     @GET
     fun getAll(): List<TrackDTO> {
-        return Track.findAll().stream().map{ TrackDTO(it) }.toList()
+        return Track.findAll().stream().map{ TrackDTO(it) }.toList<TrackDTO>()
     }
 
     @GET

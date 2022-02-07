@@ -7,13 +7,14 @@ import be.rgen.entity.Artist
 import java.util.*
 import javax.ws.rs.*
 import javax.ws.rs.core.Response
+import kotlin.streams.toList
 
 @Path("/album")
 class AlbumResource {
 
     @GET
     fun getAll(): List<AlbumDTO> {
-        return Album.findAll().stream().map{ AlbumDTO(it) }.toList()
+        return Album.findAll().stream().map{ AlbumDTO(it) }.toList<AlbumDTO>()
     }
 
     @GET

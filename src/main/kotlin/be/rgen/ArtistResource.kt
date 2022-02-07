@@ -9,12 +9,13 @@ import javax.transaction.Transactional
 import javax.ws.rs.*
 import javax.ws.rs.core.MediaType
 import javax.ws.rs.core.Response
+import kotlin.streams.toList
 
 @Path("/artist")
 class ArtistResource {
     @GET
     fun getAll(): List<ArtistDTO> {
-        return Artist.findAll().stream().map{ ArtistDTO(it) }.toList()
+        return Artist.findAll().stream().map{ ArtistDTO(it) }.toList<ArtistDTO>()
     }
 
     @POST
