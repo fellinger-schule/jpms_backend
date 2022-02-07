@@ -2,7 +2,7 @@ package be.rgen
 
 import be.rgen.dto.artist.ArtistAddDTO
 import io.quarkus.test.junit.QuarkusTest
-import io.restassured.RestAssured
+import io.restassured.RestAssured.given
 import io.restassured.http.ContentType
 import org.junit.jupiter.api.MethodOrderer
 import org.junit.jupiter.api.Order
@@ -11,12 +11,10 @@ import org.junit.jupiter.api.TestMethodOrder
 
 
 @QuarkusTest
-
 class ArtistResourceTest {
     @Test
     fun testAddArtist() {
-        RestAssured
-        .given()
+        given()
                 .contentType(ContentType.JSON)
                 .body(ArtistAddDTO("Metallica"))
         .`when`()
