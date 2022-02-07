@@ -1,0 +1,29 @@
+# @name FindByName
+GET http://localhost:8080/artist/find?name=AURORA
+Accept: application/json
+
+###
+# @name FindByID
+GET http://localhost:8080/artist/find?id=4424
+Accept: application/json
+
+###
+# @name FindWrongType
+GET http://localhost:8080/artist/find?id=asdfs
+Accept: application/json
+
+
+
+
+###
+###
+# @name AddArtist
+POST http://localhost:8080/artist/add
+Content-Type: application/json
+
+{
+  "name": "Metallica"
+}
+
+
+

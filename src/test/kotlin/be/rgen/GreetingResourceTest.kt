@@ -1,7 +1,9 @@
 package be.rgen
 
+import be.rgen.dto.artist.ArtistAddDTO
 import io.quarkus.test.junit.QuarkusTest
 import io.restassured.RestAssured.given
+import io.restassured.http.ContentType
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.jupiter.api.Test
 
@@ -16,5 +18,4 @@ class GreetingResourceTest {
              .statusCode(200)
              .body(`is`("Hello RESTEasy"))
     }
-
 }
